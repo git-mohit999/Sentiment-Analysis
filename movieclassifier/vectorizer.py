@@ -4,7 +4,7 @@ import re
 import os
 import pickle
 
-stop = pickle.load(open(os.path.join('C:/Users/Admin/Desktop/VS/movieclassifier', 'pkl_objects','stopwords.pkl'),
+stop = pickle.load(open(os.path.join('D:/movieclassifier', 'pkl_objects','stopwords.pkl'),
  'rb'))
 
 def tokenizer(text):
@@ -14,5 +14,6 @@ def tokenizer(text):
 
 	tokenized = [w for w in text.split() if w not in stop]
 	return tokenized
+
 
 vect = HashingVectorizer(decode_error='ignore',n_features=2**21, preprocessor=None, tokenizer=tokenizer)
