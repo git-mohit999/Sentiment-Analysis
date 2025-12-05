@@ -25,11 +25,12 @@ def update_model(db_path, model, batch_size = 10000):
 	conn.close()
 	return model
 
-clf = pickle.load(open(os.path.join('C:/Users/Admin/Desktop/VS/movieclassifier','pkl_objects','classifier.pkl'),'rb'))
+clf = pickle.load(open(os.path.join('D:/movieclassifier','pkl_objects','classifier.pkl'),'rb'))
 
-db = os.path.join('C:/Users/Admin/Desktop/VS/movieclassifier', 'review.sqlite')
+db = os.path.join('D:/movieclassifier', 'review.sqlite')
 
 clf = update_model(db,clf,10000)
 
 #perma-update model
+
 pickle.dump(clf,open(os.path.join('C:/Users/Admin/Desktop/VS/movieclassifier','pkl_objects','classifier.pkl'), 'wb'),protocol = 4)
