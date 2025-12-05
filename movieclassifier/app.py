@@ -9,9 +9,9 @@ from vectorizer import vect
 app = Flask(__name__)
 
 #loading clf
-clf = pickle.load(open(os.path.join('C:/Users/Admin/Desktop/VS/movieclassifier', 'pkl_objects','classifier.pkl'),'rb'))
+clf = pickle.load(open(os.path.join('D:/movieclassifier', 'pkl_objects','classifier.pkl'),'rb'))
 
-db = os.path.join('C:/Users/Admin/Desktop/VS/movieclassifier','review.sqlite')
+db = os.path.join('D:/movieclassifier','review.sqlite')
 
 def classify(document):
 	label = {0:'neg', 1:'pos'}
@@ -76,3 +76,4 @@ if __name__ == '__main__':
 	app.run(debug=True)
 	clf = update_model(db_path=db, model=clf, batch_size=10000)
 	
+
